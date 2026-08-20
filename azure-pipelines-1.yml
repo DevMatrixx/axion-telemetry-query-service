@@ -23,7 +23,7 @@ stages:
         targetType: 'inline'
         script: |
           mkdir -p $(Build.ArtifactStagingDirectory)
-          docker save axion-simulator:$(Build.BuildId) -o $(Build.ArtifactStagingDirectory)/axion-telemetry-service.tar
+          docker save axion-telemetry-service:$(Build.BuildId) -o $(Build.ArtifactStagingDirectory)/axion-telemetry-service.tar
 
 
     - task: PublishPipelineArtifact@1
