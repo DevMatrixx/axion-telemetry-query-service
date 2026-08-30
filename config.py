@@ -11,7 +11,7 @@ class Settings:
     # Format: postgresql://<user>:<password>@<host>:<port>/<database>
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL",
-        "postgresql://postgres:Apple%40123@postgres-svc:80/postgres",
+        "postgresql://postgres:postgres%40123@telemetry-service:8080/axiondb",
     )
     # Allows configuring a different port, e.g., if we run multiple services
     PORT: int = int(os.getenv("PORT", "8000"))
