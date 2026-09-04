@@ -1,6 +1,6 @@
 trigger: none
 
-pool: Docker-VM_Pool
+pool: Docker-VM-Pool
 
 stages:
 - stage: Build_Image
@@ -57,13 +57,13 @@ stages:
         azureSubscription: 'Axion-Service-Connection'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
-        inlineScript: 'az acr login --name todoclusteracr001'
+        inlineScript: 'az acr login --name brijendra'
     - task: Bash@3
       displayName: 'Tag Docker Image'
       inputs:
         targetType: inline
         script: |
-          docker tag axion-telemetry-service:$(Build.BuildId) todoclusteracr001.azurecr.io/axion-telemetry-service:$(Build.BuildId)
+          docker tag axion-telemetry-service:$(Build.BuildId) brijendra.azurecr.io/axion-telemetry-service:$(Build.BuildId)
           
     
     - task: Bash@3
@@ -71,7 +71,7 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          docker push todoclusteracr001.azurecr.io/axion-telemetry-service:$(Build.BuildId)
+          docker push brijendra.azurecr.io/axion-telemetry-service:$(Build.BuildId)
 
     
     
