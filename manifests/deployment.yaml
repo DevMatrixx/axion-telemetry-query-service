@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: telemetry-container
-        image: todoclusteracr001.azurecr.io/axion-telemetry-service:868 
+        image: brijendra.azurecr.io/axion-telemetry-service:879
         ports:
         - containerPort: 8000
